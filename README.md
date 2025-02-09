@@ -22,5 +22,16 @@ npm run dev
 - create outlet
 -create footer
 
+# Create login page
+
+# handle cors error
+# set up redux-toolkit 
+```javasccript
+npm install @reduxjs/toolkit react-redux
+```
+- configureStor==> provide the store==>create slice==> add slice to the store=>dispatch action==>subscribe to the store. 
+- reade more on redux-toolkit.
+
+
 
 
