@@ -32,6 +32,6 @@ npm install @reduxjs/toolkit react-redux
 - configureStor==> provide the store==>create slice==> add slice to the store=>dispatch action==>subscribe to the store. 
 - reade more on redux-toolkit.
 
-
+# logout and Edit Profile 
 
 

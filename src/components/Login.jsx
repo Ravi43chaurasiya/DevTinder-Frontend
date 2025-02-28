@@ -9,6 +9,7 @@ const Login = () => {
 
   const [emailId,seEmailId]=useState("ravi8@gmail.com");
   const [password,setPassword]=useState("Ravi8@32154");
+  const [error,setError]=useState("");
   const dispatch=useDispatch();
   const navigate=useNavigate();
 
@@ -25,6 +26,7 @@ const Login = () => {
       dispatch(addUser(result.data));
       return navigate("/")
     } catch (error) {
+      setError(error?.response?.data || "please enter correct credentials!")
       console.log(error);
     }
   }
@@ -68,7 +70,8 @@ const Login = () => {
             />
           </label>
 
-          <div className="card-actions mt-4">
+          <div className="card-actions mt-4"> 
+            <p className="text-red-500">{error}</p>
             <button className="btn btn-primary w-full" onClick={handleLogin}>Login</button>
           </div>
         </div>
