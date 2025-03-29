@@ -72,14 +72,7 @@ const Connections = () => {
         </div>
 
         {/* Buttons */}
-        <div className="mt-3 flex justify-end space-x-2">
-          <button className="px-3 py-1 text-sm font-medium bg-green-500 text-white rounded-lg hover:bg-green-600">
-            Accept
-          </button>
-          <button className="px-3 py-1 text-sm font-medium bg-red-500 text-white rounded-lg hover:bg-red-600">
-            Reject
-          </button>
-        </div>
+        
       </div>
     </div>
   );
