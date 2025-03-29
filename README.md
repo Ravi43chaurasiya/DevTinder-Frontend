@@ -34,4 +34,13 @@ npm install @reduxjs/toolkit react-redux
 
 # logout and Edit Profile 
 
+- show Toast message on save of profile.
+- new Page- see all my connections
+- new page- see all my connection request
+- Feature- Accept/Reject connection request
+
+- Feature- send/ignore the user card from the feed.
+
+- sign up completed.
+
 

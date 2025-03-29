@@ -1,12 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+import { base_URL } from '../utils/constant';
+import { useDispatch } from 'react-redux';
+import { removeFeed } from '../utils/feedSlice';
 
 const RequestCard = ({ user }) => {
+
+  const dispatch=useDispatch();
+
   if (!user || Object.keys(user).length === 0) {
     return <h2 className="text-slate-400 text-center">No more users in your feed!</h2>;
   }
 
   const { firstName, lastName, photoUrl, age, gender, about, skills = [] } = user;
+
+  const handleSendRequest=async(status,_id)=>{
+    try {
+      const res=await axios.post(base_URL+"request/send/"+status+"/"+_id,{},{
+        withCredentials:true
+      })
+      dispatch(removeFeed(_id));
+
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   return (
     <div className="flex justify-center my-10">
@@ -34,8 +53,8 @@ const RequestCard = ({ user }) => {
           )}
           <p className="mt-2 text-gray-600">{about}</p>
           <div className="card-actions justify-center mt-4">
-            <button className="btn btn-primary">Ignore</button>
-            <button className="btn btn-secondary">Interested</button>
+            <button className="btn btn-primary" onClick={()=>handleSendRequest("ignored",user._id)}>Ignore</button>
+            <button className="btn btn-secondary" onClick={()=>handleSendRequest("interested",user._id)}>Interested</button>
           </div>
         </div>
       </div>
@@ -45,6 +64,7 @@ const RequestCard = ({ user }) => {
 
 RequestCard.propTypes = {
   user: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     photoUrl: PropTypes.string,

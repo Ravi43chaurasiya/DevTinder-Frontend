@@ -27,6 +27,10 @@ useEffect(()=>{
   getFeed()
 },[]);
 
+if(!feed) return;
+
+if(feed.length<=0) return <h1 className='flex justify-center items-center'>No more user on your feed!</h1>
+
   return (feed && (
     <div>
       <RequestCard user={feed[0]}></RequestCard>

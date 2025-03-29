@@ -52,7 +52,7 @@ const EditProfile = ({user}) => {
 
   return (
     <>
-    <div className='flex justify-center'>
+    <div className='flex flex-col sm:flex-row justify-center'>
     <div className='flex justify-center'>
        <div className="flex justify-center items-center min-h-screen bg-gray-100 ">
       <div className="card card-side bg-base-200 shadow-xl max-w-md md:max-w-2xl flex flex-col md:flex-row items-center">
