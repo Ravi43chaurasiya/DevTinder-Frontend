@@ -135,3 +135,17 @@ http://your_domain_or_IP/api/
 
 ```
 - modify the base_URL in frontend project to /api/
+
+
+### Adding a custom domain name
+
+- purchased a domain name from godaddy
+- signup on cloudflare & add a new domain name
+- change the nameservers on godaddy and point it to cloudflare
+- wait for sometime till your namreservers activated. (usually 10-15 mins)
+
+![alt text](image.png)
+
+- dns record: A to public ip address.
+
+- enable SSL for website.
