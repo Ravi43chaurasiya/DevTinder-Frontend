@@ -149,3 +149,21 @@ http://your_domain_or_IP/api/
 - dns record: A to public ip address.
 
 - enable SSL for website.
+
+
+
+### Sending Emails via SES
+
+- Create A IAM user
+- give Access to AmazonSESFull Access
+- Amazon SES: Create an Identity
+- verify your domain name
+- verify an email address
+- install AWS SDK
+- go to code example section
+- setup sesClient
+- Access Credentials should be created in IAM under SecurityCredentials Tab
+- Add the credentials to the enc file
+- write code for SESClient
+- write code for sending email
+- make the email dynamic by passing params to the run function.
